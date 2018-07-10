@@ -1,0 +1,71 @@
+@import '@/lib/reset.scss';
+
+html, body, #root, .container{
+    @include rect(100%, 100%);
+}
+
+.container {
+   @include flexbox();
+   @include flex-direction(column);
+   .main{
+     @include flex();
+     @include rect(100%, 100%);
+     @include flexbox();
+     @include flex-direction(column);
+     header{
+     	  @include rect(100%, 0.45rem);
+     	  @include background-color(#f66);
+          @include flexbox();
+          @include text-color(#fff);
+          @include justify-content(space-between);
+          .home_hadLeft{
+              @include flexbox();
+              i{
+                  display: block;
+              }
+          }
+          .home_hadRight{
+              @include flexbox();
+          }
+     }
+     .content{
+     		@include flex();
+            @include rect(100%, auto);
+     	  	@include overflow();
+            @include background-color(#fff);
+            @include overflow();
+     }
+   }
+   footer{
+       @include rect(100%, 0.5rem);
+       @include background-color(#eee);
+       ul{
+           @include rect(100%, 100%);
+           @include flexbox();
+           li{
+               @include flexbox();
+               @include flex();
+               @include flex-direction(column);
+               a{
+                   @include rect(100%, 100%);
+                   @include flexbox();
+                   @include justify-content();
+                   @include flex-direction(column);
+                   @include align-items();
+                   @include text-color(#666);
+                   font-weight: bold;
+                   &.active{
+                       @include text-color(#db646e)
+                   }
+                   i{
+                       @include font-size(0.2rem)
+                   }
+                   p{
+                       @include font-size(0.1rem)
+                   }
+               }
+               
+           }
+       }
+   }
+}
